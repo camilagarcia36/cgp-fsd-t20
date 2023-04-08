@@ -71,7 +71,7 @@ public class Vista extends JFrame implements WindowListener {
 	@Override
 	public void windowDeactivated(WindowEvent e) {
 		// TODO Auto-generated method stub
-		
+		textArea.append("Ventana desactivada");
 	}
 
 	@Override
@@ -85,8 +85,5 @@ public class Vista extends JFrame implements WindowListener {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
-
 	
 }
