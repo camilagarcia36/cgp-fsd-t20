@@ -60,6 +60,8 @@ public class Vista extends JFrame {
 		btnEP = new JButton("Convertir de euros a pesetas");
 		btnEP.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
+		    	
+		    	//trycatch para evitar un dato que no sea numerico, añadido en los dos botones tanto EP como PE. 
 		        try {
 		            double cantidad = Double.parseDouble(txf1.getText());
 		            double resultado = cantidad * EURO_A_PESETA;
@@ -70,7 +72,7 @@ public class Vista extends JFrame {
 		        }
 		    }
 		});
-		//llama al método doClick() al presionar una tecla específica.
+		//llama al método doClick() al presionar una tecla específica. Se utiliza el shift para navegar y enter para seleccionar. 
 		btnEP.addKeyListener(new KeyAdapter() {
 		    @Override
 		    public void keyPressed(KeyEvent e) {
@@ -115,6 +117,8 @@ public class Vista extends JFrame {
 		btnBorrar = new JButton("Borrar");
 		btnBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				//Borro datos de los textfields. 
 				txf1.setText("");
 				tzfResultado.setText("");
 				lblResultado.setText("");
