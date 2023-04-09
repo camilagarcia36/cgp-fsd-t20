@@ -59,52 +59,55 @@ public class Vista extends JFrame {
 
 		btnEP = new JButton("Convertir de euros a pesetas");
 		btnEP.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		    	
-		    	//trycatch para evitar un dato que no sea numerico, añadido en los dos botones tanto EP como PE. 
-		        try {
-		            double cantidad = Double.parseDouble(txf1.getText());
-		            double resultado = cantidad * EURO_A_PESETA;
-		            tzfResultado.setText(Double.toString(resultado));
-		            lblResultado.setText("Pesetas");
-		        } catch (NumberFormatException ex) {
-		            JOptionPane.showMessageDialog(null, "Error: Introduce un número válido", "Error", JOptionPane.ERROR_MESSAGE);
-		        }
-		    }
+			public void actionPerformed(ActionEvent e) {
+
+				// trycatch para evitar un dato que no sea numerico, añadido en los dos botones
+				// tanto EP como PE.
+				try {
+					double cantidad = Double.parseDouble(txf1.getText());
+					double resultado = cantidad * EURO_A_PESETA;
+					tzfResultado.setText(Double.toString(resultado));
+					lblResultado.setText("Pesetas");
+				} catch (NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Error: Introduce un número válido", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+			}
 		});
-		//llama al método doClick() al presionar una tecla específica. Se utiliza el shift para navegar y enter para seleccionar. 
+		// llama al método doClick() al presionar una tecla específica. Se utiliza el
+		// shift para navegar y enter para seleccionar.
 		btnEP.addKeyListener(new KeyAdapter() {
-		    @Override
-		    public void keyPressed(KeyEvent e) {
-		        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-		            btnEP.doClick();
-		        }
-		    }
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					btnEP.doClick();
+				}
+			}
 		});
 
 		btnPE = new JButton("Convertir de pesetas a euros");
 		btnPE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 try {
-			            double cantidad = Double.parseDouble(txf1.getText());
-			            double resultado = cantidad * PESETA_A_EURO;
-			            tzfResultado.setText(Double.toString(resultado));
-			            lblResultado.setText("Euros");
-			        } catch (NumberFormatException ex) {
-			            JOptionPane.showMessageDialog(null, "Error: Introduce un número válido", "Error", JOptionPane.ERROR_MESSAGE);
-			        }
+				try {
+					double cantidad = Double.parseDouble(txf1.getText());
+					double resultado = cantidad * PESETA_A_EURO;
+					tzfResultado.setText(Double.toString(resultado));
+					lblResultado.setText("Euros");
+				} catch (NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Error: Introduce un número válido", "Error",
+							JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
-		
-		btnPE.addKeyListener(new KeyAdapter() {
-		    @Override
-		    public void keyPressed(KeyEvent e) {
-		        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-		            btnPE.doClick();
-		        }
-		    }
-		});
 
+		btnPE.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					btnPE.doClick();
+				}
+			}
+		});
 
 		lblResultado = new JLabel("");
 		lblResultado.setBounds(396, 53, 61, 16);
@@ -117,21 +120,21 @@ public class Vista extends JFrame {
 		btnBorrar = new JButton("Borrar");
 		btnBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//Borro datos de los textfields. 
+
+				// Borro datos de los textfields.
 				txf1.setText("");
 				tzfResultado.setText("");
 				lblResultado.setText("");
 			}
 		});
-		
+
 		btnBorrar.addKeyListener(new KeyAdapter() {
-		    @Override
-		    public void keyPressed(KeyEvent e) {
-		        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-		            btnBorrar.doClick();
-		        }
-		    }
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					btnBorrar.doClick();
+				}
+			}
 		});
 		btnBorrar.setBounds(377, 97, 117, 29);
 		contentPane.add(btnBorrar);
